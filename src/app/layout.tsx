@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import PreventScroll from "@/components/PreventScroll";
+import Dock from "@/components/Dock";
+import MenuBar from "@/components/MenuBar";
+import ContextMenu from "@/components/ContextMenu";
 
 export const metadata: Metadata = {
   title: "Aayan Khan - Portfolio",
@@ -13,8 +17,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className="">
+        <PreventScroll />
+        <ContextMenu />
+        <MenuBar />
         {children}
+        <Dock />
       </body>
     </html>
   );
